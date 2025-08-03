@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 8px #a855f7, 0 0 16px #9333ea;
+  }
+  50% {
+    box-shadow: 0 0 16px #9333ea, 0 0 32px #a855f7;
+  }
+  100% {
+    box-shadow: 0 0 8px #a855f7, 0 0 16px #9333ea;
+  }
+}
+
+.bg-neon-pulse {
+  animation: neonPulse 3s infinite;
+}
+
+/* Holographic Shine */
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(168,85,247,0.1), rgba(255,255,255,0.1), rgba(168,85,247,0.1));
+  transform: rotate(25deg);
+  animation: shine 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(25deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(25deg) translateX(100%);
+  }
+}
+
+/* Glassy inputs */
+.glassy-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+/* Button glow */
+.shadow-neon {
+  box-shadow: 0 0 8px #a855f7, 0 0 15px #9333ea;
+}
+
+
+.glow-purple {
+  text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7;
+}
+
+.neon-border {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 5px rgba(236, 72, 153, 0.8),
+    0 0 10px rgba(236, 72, 153, 0.6),
+    0 0 20px rgba(236, 72, 153, 0.4);
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

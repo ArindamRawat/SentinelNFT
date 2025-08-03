@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Animated Grid Background */
+.animated-grid-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-grid-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent 98%, rgba(168, 85, 247, 0.3) 99%), 
+              linear-gradient(90deg, transparent 98%, rgba(168, 85, 247, 0.3) 99%);
+  background-size: 40px 40px;
+  z-index: 0;
+  animation: moveGrid 30s linear infinite;
+}
+
+@keyframes moveGrid {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-40px, -40px);
+  }
+}
+
+.animated-grid-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Glowing Text */
+.glowing-purple {
+  color: white;
+  text-shadow: 0 0 8px #a855f7, 0 0 15px #a855f7;
+}
+
+/* Neon Divider */
+.neon-divider {
+  height: 4px;
+  width: 200px;
+  background: linear-gradient(to right, transparent, #a855f7, transparent);
+  margin: auto;
+  border-radius: 4px;
+}
+
+/* Neon Panels and Borders */
+.neon-border {
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.neon-panel {
+  border: 1px solid #a855f7;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px #a855f7;
+}
+
+/* Button Hover Glow */
+.glow-on-hover:hover {
+  box-shadow: 0 0 12px #a855f7, 0 0 25px #a855f7;
+  transform: scale(1.05);
+}
+
+/* Section Animations */
+.fade-in {
+  animation: fadeIn 1.2s ease-in forwards;
+}
+.slide-up {
+  animation: slideUp 1.2s ease-in forwards;
+}
+.bounce-in {
+  animation: bounceIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
