@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sentinel-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: UNLEASH_API_KEY
+        value: your_unleash_api_key
+      - key: GEMINI_API_KEY
+        value: your_google_gemini_api_key

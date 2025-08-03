@@ -497,7 +497,6 @@ app.use('/api', async (req, res) => {
   }
 });
 
-// ✅ Start server
-app.listen(PORT, () => {
-  console.log(`🔁 Proxy server running at http://localhost:${PORT}`);
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`🚀 Server running on port ${process.env.PORT || 3001}`);
 });
