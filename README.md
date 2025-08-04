@@ -7,7 +7,7 @@ This project merges live NFT market insights with anomaly detection and risk ana
 
 ### 🧬 LOGO
 
-<img width="1024" height="1024" alt="ChatGPT Image Aug 4, 2025, 03_12_29 AM" src="https://github.com/user-attachments/assets/cfe8bf4c-eb34-4ed3-a7de-12230ea037d1" />
+<img width="1024" height="1024" alt="ChatGPT Image Aug 4, 2025, 03_59_55 AM" src="https://github.com/user-attachments/assets/3dfe80b8-8a92-4017-ab05-ea9ef9fb7495" />
 
 ---
 
@@ -15,6 +15,10 @@ This project merges live NFT market insights with anomaly detection and risk ana
 
 [![Watch Demo Video](https://img.youtube.com/vi/IlkfOEHp2hg/0.jpg)](https://youtu.be/IlkfOEHp2hg)
 
+---
+## 🌐 Visit Website
+
+[![Visit SentinelNFT Dashboard](https://img.shields.io/badge/Visit-Live%20Site-green?style=for-the-badge&logo=vercel)](https://sentinel-nft.vercel.app/)
 ---
 
 ## 🖼️ Dashboard Screenshots
