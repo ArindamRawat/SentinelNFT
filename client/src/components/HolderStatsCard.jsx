@@ -30,7 +30,7 @@ function HolderStatsCard({ contract, blockchain }) {
     setLoading(true);
     try {
       const res = await fetch(
-        `/api/api/v2/nft/collection/holders?blockchain=${blockchain}&contract_address=${contract}&time_range=${selectedTime}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/holders?blockchain=${blockchain}&contract_address=${contract}&time_range=${selectedTime}`
       );
       const data = await res.json();
       setHolderData(data);

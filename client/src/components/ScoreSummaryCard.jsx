@@ -18,7 +18,7 @@ const ScoreSummaryCard = ({ blockchain, contractAddress }) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `/api/api/v2/nft/collection/profile?blockchain=${blockchain}&contract_address=${contractAddress}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/profile?blockchain=${blockchain}&contract_address=${contractAddress}`
       );
       const data = await response.json();
       setScores(data);

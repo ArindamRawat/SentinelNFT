@@ -27,7 +27,7 @@ const TrendGraph = ({ contractAddress, chainId }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('/api/api/v2/nft/collection/trend', {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/trend`, {
         params: {
           blockchain: chainId || 'ethereum',
           contract_address: contractAddress,

@@ -38,7 +38,7 @@ function App() {
   const fetchScores = async ({ contract, blockchain, timeRange, sortOrder }) => {
     try {
       const scoresRes = await fetch(
-        `/api/api/v2/nft/collection/scores?blockchain=${blockchain}&contract_address=${contract}&time_range=${timeRange}&offset=0&limit=30&sort_by=marketcap&sort_order=${sortOrder}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/scores?blockchain=${blockchain}&contract_address=${contract}&time_range=${timeRange}&offset=0&limit=30&sort_by=marketcap&sort_order=${sortOrder}`
       );
 
       const scoresJson = await scoresRes.json();
@@ -57,9 +57,9 @@ function App() {
 
   const fetchAnalytics = async ({ contract, blockchain }) => {
     try {
-      const analyticsRes = await fetch(
-        `/api/api/v2/nft/collection/analytics?blockchain=${blockchain}&contract_address=${contract}`
-      );
+    const analyticsRes = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/analytics?blockchain=${blockchain}&contract_address=${contract}`
+    );
       const analyticsJson = await analyticsRes.json();
       setAnalytics(analyticsJson);
     } catch (error) {
@@ -78,7 +78,7 @@ function App() {
 
     try {
       const metadataRes = await fetch(
-        `/api/api/v2/nft/collection/metadata?blockchain=${blockchain}&contract_address=${contract}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/metadata?blockchain=${blockchain}&contract_address=${contract}`
       );
       const metadataJson = await metadataRes.json();
 
@@ -92,7 +92,7 @@ function App() {
       await fetchAnalytics({ contract, blockchain });
 
       const profileRes = await fetch(
-        `/api/api/v2/nft/collection/profile?blockchain=${blockchain}&contract_address=${contract}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/profile?blockchain=${blockchain}&contract_address=${contract}`
       );
       const profileJson = await profileRes.json();
       setProfile(profileJson);

@@ -25,7 +25,7 @@ function MarketStatsCard({ contract, blockchain }) {
       setError(null);
       try {
         const res = await fetch(
-          `/api/api/v2/nft/collection/analytics?blockchain=${blockchain}&contract_address=${contract}&time_range=${timeRange}&sort_by=${sortBy}&sort_order=${sortOrder}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/api/v2/nft/collection/analytics?blockchain=${blockchain}&contract_address=${contract}&time_range=${timeRange}&sort_by=${sortBy}&sort_order=${sortOrder}`
         );
         const json = await res.json();
         if (res.ok) {

@@ -8,32 +8,32 @@ function ExpertInsightCard({ blockchain, contractAddress }) {
   const [timeRange, setTimeRange] = useState('24h');
 
   const getInsight = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch('/api/gemini/insight', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          blockchain,
-          contract_address: contractAddress,
-          time_range: timeRange,
-        }),
-      });
+  setLoading(true);
+  try {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/gemini/insight`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        blockchain,
+        contract_address: contractAddress,
+        time_range: timeRange,
+      }),
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
-      if (res.ok) {
-        setInsight(data.summary || 'No insight generated.');
-      } else {
-        console.error('Server responded with error:', data.error);
-        setInsight('Error generating insight.');
-      }
-    } catch (err) {
-      console.error('Error fetching insight:', err);
-      setInsight('Network or server error while generating insight.');
+    if (res.ok) {
+      setInsight(data.summary || 'No insight generated.');
+    } else {
+      console.error('Server responded with error:', data.error);
+      setInsight('Error generating insight.');
     }
-    setLoading(false);
-  };
+  } catch (err) {
+    console.error('Error fetching insight:', err);
+    setInsight('Network or server error while generating insight.');
+  }
+  setLoading(false);
+};
 
   const handleViewClick = () => {
     setShowInsight(true);
